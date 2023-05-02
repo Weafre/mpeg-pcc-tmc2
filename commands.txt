@@ -1,0 +1,16 @@
+test pcs:
+../../Datasets/MPEG_MVUB_CAT_9_12bits/10bits_TestPCs/MPEG8i/redandblack/Ply/
+
+./bin/PccAppEncoder \
+        --configurationFolder=cfg/ \
+        --config=cfg/common/ctc-common.cfg \
+        --config=cfg/condition/ctc-low-delay.cfg \
+        --config=cfg/sequence/redandblack_vox10.cfg \
+        --config=cfg/rate/ctc-r3.cfg \
+        --uncompressedDataFolder=/home/datnguyen/Projects/Datasets/MPEG_MVUB_CAT_9_12bits/10bits_TestPCs/MPEG8i/redandblack/Ply/ \
+        --frameCount=100 \
+        --reconstructedDataPath=Output/S26C03R03_rec_%04d.ply \
+        --compressedStreamPath=Output/S26C03R03.bin
+
+ - HM patch: /home/datnguyen/Projects/MPEG/mpeg-pcc-tmc2/dependencies/hm-modification/HM-16.20+SCM-8.8_with_RDO.patch
+ - VTM patch: /home/datnguyen/Projects/MPEG/mpeg-pcc-tmc2/dependencies/vtm-modification/adaptions_for_vtm_13_0.patch
